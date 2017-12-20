@@ -36,6 +36,15 @@ u.dotted {
   position: absolute;
   top: 20px;
   left: 20px;
-  border: 2px solid black;
-  padding: 10px;
+}
+
+.social {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 50px;
+}
+
+.social-icon {
+  margin-right: 15px;
 }

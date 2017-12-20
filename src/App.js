@@ -6,6 +6,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import { SocialIcon } from 'react-social-icons'
+
 import './App.css'
 
 import About from './About'
@@ -18,7 +20,7 @@ const BasicExample = () => (
   <Router>
     <div className='App'>
       <h1 className='mainIcon'>
-        ⊙‿⊙
+        <img src="./assets/images/nigelk-icon.svg" alt=""></img>
       </h1>
 
       <div className='nav-bar autogrid'>
@@ -35,6 +37,13 @@ const BasicExample = () => (
         <Route path="/projects" component={Projects}/>
         <Route path="/recipes" component={Recipes}/>
         <Route path="/pictures" component={Pictures}/>
+      </div>
+
+      <div className='social'>
+        <SocialIcon url='https://github.com/kozlown' color='black'/>
+        <SocialIcon url='https://soundcloud.com/nigel-kozlowski' color='black'/>
+        <SocialIcon url='https://twitter.com/nigelkozlowski' color='black'/>
+        <SocialIcon url='https://www.instagram.com/nigel.climbing/' color='black'/>
       </div>
     </div>
   </Router>
