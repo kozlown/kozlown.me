@@ -9,7 +9,7 @@ const About = () => (
     </h2>
     <p>Computer science student at <a target='_' href="http://www.ipi-ecoles.com/">IPI</a></p>
     <p>
-      <u>Climber</u> and <u>Web developer</u>
+      <a target='_' href="https://www.instagram.com/nigel.climbing">Climber</a> and <a target='_' href="https://github.com/kozlown">Web developer</a>
     </p>
     <p>
       Interested by <u className='dotted'>vegan food</u> and <u className='dotted'>mental & physical development</u>

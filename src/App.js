@@ -17,6 +17,10 @@ import Projects from './Projects'
 const BasicExample = () => (
   <Router>
     <div className='App'>
+      <h1 className='mainIcon'>
+        ⊙‿⊙
+      </h1>
+
       <div className='nav-bar autogrid'>
         <div className='center'><Link to="/">About</Link></div>
         <div className='center'><Link to="/WhatsHere">What's here ?</Link></div>

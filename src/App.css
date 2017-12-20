@@ -13,7 +13,8 @@
 }
 
 .nav-bar {
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   font-size: 25px;
   text-decoration: underline;
   padding: 100px;
@@ -21,4 +22,20 @@
 
 .red {
   color: #D9534F;
+}
+
+u.wavy {
+  text-decoration: underline wavy;
+}
+
+u.dotted {
+  text-decoration: underline dotted;
+}
+
+.mainIcon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 2px solid black;
+  padding: 10px;
 }
