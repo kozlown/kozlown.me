@@ -1,0 +1,14 @@
+.Pictures .item {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  width: 50%;
+}
+
+.Pictures .item iframe {
+  max-width: none !important;
+}
+
+.Pictures {
+  text-align: center;
+}

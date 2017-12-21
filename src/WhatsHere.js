@@ -1,7 +1,9 @@
 import React from 'react'
 
+import './WhatsHere.css'
+
 const WhatsHere = () => (
-  <div>
+  <div className='WhatsHere'>
     <p>Welcome in my personal website !</p>
     <p>It contains anything that I’d like to share with <u className='dotted'>others</u> and my <u className='dotted'>future me</u>.</p>
     <p>
