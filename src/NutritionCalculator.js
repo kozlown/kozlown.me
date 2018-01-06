@@ -1,13 +1,17 @@
 import React from 'react'
+import Button from 'material-ui/Button'
+import AddIcon from 'material-ui-icons/Add'
 
 import './About.css'
-import Table from './NutritionCalculator/Table'
+import NutritionTable from './NutritionCalculator/NutritionTable'
+import Search from './NutritionCalculator/Search'
 
 class NutritionCalculator extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
+      search: false,
       food: [
         {
           name: 'Craquinette',
@@ -49,10 +53,27 @@ class NutritionCalculator extends React.Component {
     }
   }
 
+  handleAddClick () {
+    this.setState({
+      search: true
+    })
+  }
+
+  handleSearchClose () {
+    this.setState({
+      search: false
+    })
+  }
+
   render () {
     return (
       <div className='RecipeCreator'>
-        <Table food={this.state.food}/>
+        <NutritionTable food={this.state.food}>
+          <Button onClick={this.handleAddClick.bind(this)} fab color="primary" aria-label="add">
+            <AddIcon />
+          </Button>
+        </NutritionTable>
+        { this.state.search === true && <Search handleClose={this.handleSearchClose.bind(this)}/>}
       </div>
     )
   }

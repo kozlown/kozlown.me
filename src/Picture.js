@@ -1,7 +1,7 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { Preload } from 'react-preload'
-import { CircularProgress } from 'material-ui'
+import { CircularProgress } from 'material-ui/Progress'
 
 import './Picture.css'
 
