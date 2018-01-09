@@ -19,3 +19,15 @@
   box-shadow: none;
   border: none;
 }
+
+.Search .results {
+  position: absolute;
+  top: 220px;
+  height: calc(100% - 220px);
+}
+
+.Search .results div {
+  width: 100%;
+  font-size: 40px;
+  color: white;
+}

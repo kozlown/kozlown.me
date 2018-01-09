@@ -8,8 +8,7 @@ class Aliment extends React.Component {
       <tr className='Aliment' style={{backgroundColor: '#ffab40'}}>
         <th>{this.props.data.name}</th>
         <th>{this.props.data.quantity} g</th>
-        <th>{this.props.data.carbohydrate.simple} g</th>
-        <th>{this.props.data.carbohydrate.complex} g</th>
+        <th>{this.props.data.carbohydrate.sugar} g</th>
         <th>{this.props.data.carbohydrate.total} g</th>
         <th>{this.props.data.lipid.SFA} g</th>
         <th>{this.props.data.lipid.o9} g</th>

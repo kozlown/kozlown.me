@@ -12,10 +12,10 @@ class NutritionTable extends React.Component {
     const sumObjects = (objects) => {
       return Array.from(objects).reduce((a, b) => {
         deepKeys(b).forEach(key => {
-          _.set(a, key, (_.get(a, key) || 0) + _.get(b, key))
+          _.set(a, key, Math.round(((_.get(a, key) || 0) + _.get(b, key)) * 10) / 10)
         })
-        return a;
-      }, {});
+        return a
+      }, {})
     }
 
     const totalValues = sumObjects(this.props.food)
@@ -28,14 +28,13 @@ class NutritionTable extends React.Component {
           <tr>
             <th rowSpan={3}>Aliment</th>
             <th rowSpan={3}>Quantity</th>
-            <th colSpan={3}>Carbohydrate</th>
+            <th colSpan={2}>Carbohydrate</th>
             <th colSpan={5}>Lipid</th>
             <th rowSpan={3}>Protein</th>
             <th rowSpan={3}>Energy</th>
           </tr>
           <tr>
-            <th rowSpan={2}>Simple</th>
-            <th rowSpan={2}>Complex</th>
+            <th rowSpan={2}>Sugar</th>
             <th rowSpan={2}>Total</th>
             <th rowSpan={2}>SFA</th>
             <th>MFA</th>
@@ -51,11 +50,11 @@ class NutritionTable extends React.Component {
         <tbody>
           {food}
           <tr>
-            <th colSpan={12} style={{textAlign: 'center', padding: '15px'}}>
+            <th colSpan={11} style={{textAlign: 'center', padding: '15px'}}>
               {this.props.children}
             </th>
           </tr>
-          {total}
+          {food.length > 0 ? total : ''}
         </tbody>
       </table>
     )
