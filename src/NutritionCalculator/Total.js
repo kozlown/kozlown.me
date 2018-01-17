@@ -21,7 +21,6 @@ class Total extends React.Component {
     const total = sumObjects(this.props.food)
 
     return (
-      this.props.food.length > 0 ?
       <tr className='Total' style={{backgroundColor: '#699C98'}}>
         <th>TOTAL</th>
         <th>{total.quantity} g</th>
@@ -34,20 +33,6 @@ class Total extends React.Component {
         <th>{total.lipid.total} g</th>
         <th>{total.protein} g</th>
         <th>{total.energy} kcal</th>
-      </tr>
-        :
-      <tr className='Total' style={{backgroundColor: '#ffab40'}}>
-        <th>TOTAL</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... g</th>
-        <th>... kcal</th>
       </tr>
     )
   }

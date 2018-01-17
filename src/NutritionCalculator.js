@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from 'material-ui/Button'
-import AddIcon from 'material-ui-icons/Add'
+import SearchIcon from 'material-ui-icons/Search'
 
-import './About.css'
+import './NutritionCalculator.css'
 import NutritionTable from './NutritionCalculator/NutritionTable'
 import Search from './NutritionCalculator/Search'
 import getNutrients from './models/Nutrients'
@@ -49,12 +49,11 @@ class NutritionCalculator extends React.Component {
 
   render () {
     return (
-      <div className='RecipeCreator'>
-        <NutritionTable food={this.state.food} onQuantityChange={this.handleQuantityChange.bind(this)}>
-          <Button onClick={this.handleAddClick.bind(this)} fab color="primary" aria-label="add">
-            <AddIcon />
-          </Button>
-        </NutritionTable>
+      <div className='NutritionCalculator'>
+        <Button onClick={this.handleAddClick.bind(this)} fab color="primary" aria-label="search" className='searchButton'>
+          <SearchIcon />
+        </Button>
+        <NutritionTable food={this.state.food} onQuantityChange={this.handleQuantityChange.bind(this)} />
         {
           this.state.search === true
           &&

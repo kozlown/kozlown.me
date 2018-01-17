@@ -23,7 +23,7 @@ class Search extends React.Component {
 
   search (keyWords) {
     const search = this
-    axios.get(`http://localhost:3001/search?keywords=${keyWords}`)
+    axios.get(`http://109.238.11.174:3001/search?keywords=${keyWords}`)
       .then(response => {
         search.setState({
           results: response.data
@@ -34,10 +34,12 @@ class Search extends React.Component {
   render () {
     const results = this.state.results.map(result =>
       <div>
-        <span>{result.alim_nom_eng}</span>
-        <Button onClick={() => this.props.addAliment(result)} fab color="primary" aria-label="add">
-          <AddIcon />
-        </Button>
+        <div className='name'>{result.alim_nom_eng}</div>
+        <div className='addButton'>
+          <Button onClick={() => this.props.addAliment(result)} fab color="primary" aria-label="add">
+            <AddIcon />
+          </Button>
+        </div>
       </div>
     )
 

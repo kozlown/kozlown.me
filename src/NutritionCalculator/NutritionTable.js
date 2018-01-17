@@ -41,11 +41,6 @@ class NutritionTable extends React.Component {
         </thead>
         <tbody>
           {food}
-          <tr>
-            <th colSpan={11} style={{textAlign: 'center', padding: '15px'}}>
-              {this.props.children}
-            </th>
-          </tr>
           {food.length > 0 ? <Total food={this.props.food}/> : ''}
         </tbody>
       </table>

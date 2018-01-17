@@ -4,7 +4,7 @@ export default aliment => new Promise((resolve, reject) => {
   const alimCode = aliment.alim_code.trim()
   const alimName = aliment.alim_nom_eng.trim()
 
-  axios.get(`http://localhost:3001/${alimCode}/nutrients`)
+  axios.get(`http://109.238.11.174:3001/${alimCode}/nutrients`)
     .then(({ data }) => {
       const nutrient = const_code => Math.round(
         parseFloat(data.find(element => element.const_code.trim() === const_code)

@@ -1,8 +1,8 @@
 .Search {
   position: fixed;
-  left: 15%;
+  left: 25%;
   top: 15%;
-  width: 70%;
+  width: 50%;
   height: 70%;
   background-color: #FFC063;
   -webkit-border-radius: 5px;
@@ -39,7 +39,24 @@
 .Search .results div {
   margin: 10px;
   padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   font-size: 30px;
+  min-height: 70px;
   color: white;
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+}
+
+.Search .results div .name {
+  grid-column: 1 / 4;
+  float: left;
+  display: inline-block;
+}
+
+.Search .results div .addButton {
+  grid-column: 4 / 5;
+  display: inline-block;
 }
