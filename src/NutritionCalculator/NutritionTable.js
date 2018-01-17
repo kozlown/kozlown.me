@@ -1,26 +1,18 @@
 import React from 'react'
-import deepKeys from 'deep-keys'
-import _ from 'lodash'
 
 import './NutritionTable.css'
 import Aliment from './Aliment'
+import Total from './Total'
 
 class NutritionTable extends React.Component {
-  render () {
-    const food = this.props.food.map(aliment => <Aliment data={aliment}/>)
-
-    const sumObjects = (objects) => {
-      return Array.from(objects).reduce((a, b) => {
-        deepKeys(b).forEach(key => {
-          _.set(a, key, Math.round(((_.get(a, key) || 0) + _.get(b, key)) * 10) / 10)
-        })
-        return a
-      }, {})
+  handleQuantityChange(id) {
+    return (quantity) => {
+      this.props.onQuantityChange(id, quantity)
     }
+  }
 
-    const totalValues = sumObjects(this.props.food)
-    totalValues.name = 'TOTAL'
-    const total = <Aliment data={totalValues}/>
+  render () {
+    const food = this.props.food.map((aliment, id) => <Aliment onQuantityChange={this.handleQuantityChange(id)} data={aliment}/>)
 
     return (
       <table border={1} className='NutritionTable'>
@@ -54,7 +46,7 @@ class NutritionTable extends React.Component {
               {this.props.children}
             </th>
           </tr>
-          {food.length > 0 ? total : ''}
+          {food.length > 0 ? <Total food={this.props.food}/> : ''}
         </tbody>
       </table>
     )

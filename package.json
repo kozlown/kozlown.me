@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://kozlown.github.io/nigelk.fr",
   "dependencies": {
+    "axios": "^0.17.1",
     "deep-keys": "^0.5.0",
     "gh-pages": "^1.1.0",
     "lodash": "^4.17.4",
@@ -15,8 +16,7 @@
     "react-preload": "git+https://github.com/malikid/react-preload.git",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "react-social-icons": "^2.7.0",
-    "xml2js": "^0.4.19"
+    "react-social-icons": "^2.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

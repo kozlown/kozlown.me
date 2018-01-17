@@ -1,8 +1,8 @@
 import React from 'react'
 import CloseIcon from 'material-ui-icons/Close'
-import { parseString } from 'xml2js'
 import Button from 'material-ui/Button'
 import AddIcon from 'material-ui-icons/Add'
+import axios from 'axios'
 
 import './Search.css'
 
@@ -21,29 +21,14 @@ class Search extends React.Component {
     }
   }
 
-  componentDidMount () {
-    const search = this
-    const reqCiqualAlim = new XMLHttpRequest()
-    reqCiqualAlim.open('GET', '/assets/data/ciqual_alim.xml', false)
-    reqCiqualAlim.send(null)
-    parseString(reqCiqualAlim.responseText, (err, res) => {
-      if (err) {
-        console.error(err)
-      }
-      search.ciqualAlim = res
-    })
-  }
-
   search (keyWords) {
-    this.setState({
-      results: this.ciqualAlim.TABLE.ALIM.filter(aliment => {
-        return keyWords.toLowerCase().split(' ').every(keyword => {
-          return aliment.alim_nom_index_fr.some(indexFr => {
-            return indexFr.toLowerCase().includes(keyword)
-          })
+    const search = this
+    axios.get(`http://localhost:3001/search?keywords=${keyWords}`)
+      .then(response => {
+        search.setState({
+          results: response.data
         })
       })
-    })
   }
 
   render () {
