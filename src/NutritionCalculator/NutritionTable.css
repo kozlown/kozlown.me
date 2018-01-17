@@ -1,3 +1,7 @@
-.NutritionTable tbody th, .NutritionTable tbody tr {
+.NutritionTable tbody th, .NutritionTable tbody tr, .NutritionTable thead tr, .NutritionTable thead th {
   font-weight: 400;
+}
+
+.NutritionTable thead tr, .NutritionTable thead th {
+  font-size: 22px;
 }
