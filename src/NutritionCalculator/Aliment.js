@@ -23,7 +23,7 @@ class Aliment extends React.Component {
     const sanitizeValue = value => Math.round(value * this.state.quantity / 10) / 10
 
     return (
-      <tr className='Aliment' style={{backgroundColor: '#ffab40'}}>
+      <tr className='Aliment' style={{backgroundColor: '#93CF8C'}}>
         <th>{this.props.data.name}</th>
         <th><input type="number" value={this.state.quantity} onChange={this.handleChangeQuantity.bind(this)}/> g</th>
         <th>{sanitizeValue(this.props.data.carbohydrate.sugar)} g</th>

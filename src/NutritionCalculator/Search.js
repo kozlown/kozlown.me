@@ -34,7 +34,7 @@ class Search extends React.Component {
   render () {
     const results = this.state.results.map(result =>
       <div>
-        <span>{result.alim_nom_fr}</span>
+        <span>{result.alim_nom_eng}</span>
         <Button onClick={() => this.props.addAliment(result)} fab color="primary" aria-label="add">
           <AddIcon />
         </Button>
@@ -45,7 +45,7 @@ class Search extends React.Component {
       <div className='Search'>
         <input autoFocus type="text" placeholder="Search food" onKeyPressCapture={this.handleKeyPress.bind(this)}/>
         <CloseIcon onClick={this.props.handleClose} style={{
-          position: 'fixed',
+          position: 'absolute',
           cursor: 'pointer',
           right: 10,
           top: 10,

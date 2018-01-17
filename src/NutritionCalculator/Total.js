@@ -22,7 +22,7 @@ class Total extends React.Component {
 
     return (
       this.props.food.length > 0 ?
-      <tr className='Total' style={{backgroundColor: '#ffab40'}}>
+      <tr className='Total' style={{backgroundColor: '#699C98'}}>
         <th>TOTAL</th>
         <th>{total.quantity} g</th>
         <th>{total.carbohydrate.sugar} g</th>
