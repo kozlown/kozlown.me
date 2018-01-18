@@ -27,7 +27,7 @@ class NutritionTable extends React.Component {
       <table border={1} className='NutritionTable'>
         <thead>
           <tr>
-            <th rowSpan={3}>Actions</th>
+            <th colSpan={2} rowSpan={3}>Actions</th>
             <th rowSpan={3}>Aliment</th>
             <th rowSpan={3}>Quantity</th>
             <th colSpan={2}>Carbohydrate</th>

@@ -34,7 +34,7 @@ class Aliment extends React.Component {
 
     return (
       <tr className='Aliment' style={{backgroundColor: '#93CF8C'}}>
-        <th>
+        <th colSpan={2}>
           <Button fab mini color="accent" onClick={this.handleDelete.bind(this)} aria-label="edit" style={deleteStyle}>
             <DeleteIcon />
           </Button>

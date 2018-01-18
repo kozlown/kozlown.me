@@ -58,6 +58,12 @@ class NutritionCalculator extends React.Component {
     })
   }
 
+  handleDeleteAll() {
+    this.setState({
+      food: []
+    })
+  }
+
   render () {
     return (
       <div className='NutritionCalculator'>
@@ -67,6 +73,7 @@ class NutritionCalculator extends React.Component {
         <NutritionTable
           food={this.state.food}
           onDelete={this.handleDelete.bind(this)}
+          onDeleteAll={this.handleDeleteAll.bind(this)}
           onQuantityChange={this.handleQuantityChange.bind(this)} />
         {
           this.state.search === true

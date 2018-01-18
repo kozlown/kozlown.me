@@ -1,10 +1,16 @@
 import React from 'react'
 import _ from 'lodash'
 import deepKeys from 'deep-keys'
+import Button from 'material-ui/Button'
+import DeleteIcon from 'material-ui-icons/Delete'
 
 import './Total.css'
 
 class Total extends React.Component {
+  handleDeleteAll () {
+    this.props.onDeleteAll()
+  }
+
   render () {
     const sumObjects = (objects) => {
       return Array.from(objects).reduce((a, b) => {
@@ -20,8 +26,21 @@ class Total extends React.Component {
 
     const total = sumObjects(this.props.food)
 
+    const deleteAllStyle = {
+      fontFamily: 'Roboto',
+      fontSize: 15,
+      textTransform: 'uppercase',
+      margin: 20
+    }
+
     return (
       <tr className='Total' style={{backgroundColor: '#699C98'}}>
+        <th colSpan={2}>
+          <Button raised color="accent" onClick={this.handleDeleteAll.bind(this)} aria-label="delete" style={deleteAllStyle}>
+            Delete all
+            <DeleteIcon />
+          </Button>
+        </th>
         <th>TOTAL</th>
         <th>{total.quantity} g</th>
         <th>{total.carbohydrate.sugar} g</th>
