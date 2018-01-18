@@ -32,8 +32,8 @@ class Search extends React.Component {
   }
 
   render () {
-    const results = this.state.results.map(result =>
-      <div>
+    const results = this.state.results.map((result, id) =>
+      <div key={id}>
         <div className='name'>{result.alim_nom_eng}</div>
         <div className='addButton'>
           <Button onClick={() => this.props.addAliment(result)} fab color="primary" aria-label="add">

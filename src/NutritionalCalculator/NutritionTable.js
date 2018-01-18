@@ -18,6 +18,7 @@ class NutritionTable extends React.Component {
   render () {
     const food = this.props.food.map((aliment, id) =>
       <Aliment
+        key={id}
         onDelete={this.handleDelete(id)}
         onQuantityChange={this.handleQuantityChange(id)} data={aliment}
       />
