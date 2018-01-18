@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'material-ui/Button'
 import SearchIcon from 'material-ui-icons/Search'
+import _ from 'lodash'
 
 import './NutritionCalculator.css'
 import NutritionTable from './NutritionCalculator/NutritionTable'
@@ -47,13 +48,26 @@ class NutritionCalculator extends React.Component {
     })
   }
 
+  handleDelete (id) {
+    const food = [...this.state.food]
+
+    _.remove(food, (n, index) => index === id)
+
+    this.setState({
+      food
+    })
+  }
+
   render () {
     return (
       <div className='NutritionCalculator'>
         <Button onClick={this.handleAddClick.bind(this)} fab color="primary" aria-label="search" className='searchButton'>
           <SearchIcon />
         </Button>
-        <NutritionTable food={this.state.food} onQuantityChange={this.handleQuantityChange.bind(this)} />
+        <NutritionTable
+          food={this.state.food}
+          onDelete={this.handleDelete.bind(this)}
+          onQuantityChange={this.handleQuantityChange.bind(this)} />
         {
           this.state.search === true
           &&

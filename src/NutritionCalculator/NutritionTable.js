@@ -11,13 +11,23 @@ class NutritionTable extends React.Component {
     }
   }
 
+  handleDelete(id) {
+    return () => this.props.onDelete(id)
+  }
+
   render () {
-    const food = this.props.food.map((aliment, id) => <Aliment onQuantityChange={this.handleQuantityChange(id)} data={aliment}/>)
+    const food = this.props.food.map((aliment, id) =>
+      <Aliment
+        onDelete={this.handleDelete(id)}
+        onQuantityChange={this.handleQuantityChange(id)} data={aliment}
+      />
+    )
 
     return (
       <table border={1} className='NutritionTable'>
         <thead>
           <tr>
+            <th rowSpan={3}>Actions</th>
             <th rowSpan={3}>Aliment</th>
             <th rowSpan={3}>Quantity</th>
             <th colSpan={2}>Carbohydrate</th>
