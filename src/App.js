@@ -18,7 +18,7 @@ import Projects from './Projects'
 import NutritionalCalculator from './NutritionalCalculator'
 
 const BasicExample = () => (
-  <Router basename='/kozlown.me'>
+  <Router>
     <div className='App'>
       <h1 className='mainIcon'>
         <img src="./assets/images/nigelk-icon.svg" alt=""/>
