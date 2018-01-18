@@ -23,6 +23,7 @@ class NutritionTable extends React.Component {
             <th colSpan={2}>Carbohydrate</th>
             <th colSpan={5}>Lipid</th>
             <th rowSpan={3}>Protein</th>
+            <th rowSpan={3}>Salt</th>
             <th rowSpan={3}>Energy</th>
           </tr>
           <tr>

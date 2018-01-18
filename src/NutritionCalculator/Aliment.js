@@ -34,6 +34,7 @@ class Aliment extends React.Component {
         <th>{sanitizeValue(this.props.data.lipid.o3)} g</th>
         <th>{sanitizeValue(this.props.data.lipid.total)} g</th>
         <th>{sanitizeValue(this.props.data.protein)} g</th>
+        <th>{sanitizeValue(this.props.data.salt)} g</th>
         <th>{sanitizeValue(this.props.data.energy)} kcal</th>
       </tr>
     )

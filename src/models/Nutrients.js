@@ -28,6 +28,7 @@ export default aliment => new Promise((resolve, reject) => {
           total: nutrient('40000')
         },
         protein: nutrient('25000'),
+        salt: nutrient('10004'),
         energy: nutrient('328')
       }
 

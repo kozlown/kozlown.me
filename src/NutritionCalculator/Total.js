@@ -32,6 +32,7 @@ class Total extends React.Component {
         <th>{total.lipid.o3} g</th>
         <th>{total.lipid.total} g</th>
         <th>{total.protein} g</th>
+        <th>{total.salt} g</th>
         <th>{total.energy} kcal</th>
       </tr>
     )
