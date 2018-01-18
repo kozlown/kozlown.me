@@ -1,4 +1,4 @@
-Nigel Kozlowski's personal website :v: [Check it out](https://kozlown.github.io/nigelk.fr/) :banana:
+Nigel Kozlowski's personal website :v: [Check it out](http://www.kozlown.me) :banana:
 
 Made with :heart: using [react](https://reactjs.org/) :fire:
 
