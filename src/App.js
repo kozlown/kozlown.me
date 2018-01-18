@@ -15,7 +15,7 @@ import Pictures from './Pictures'
 import WhatsHere from './WhatsHere'
 import Recipes from './Recipes'
 import Projects from './Projects'
-import NutritionCalculator from './NutritionCalculator'
+import NutritionalCalculator from './NutritionalCalculator'
 
 const BasicExample = () => (
   <Router basename='/nigelk.fr'>
@@ -30,7 +30,7 @@ const BasicExample = () => (
         <div className='center'><Link to="/projects">Projects</Link></div>
         <div className='center'><Link to="/recipes">Recipes</Link></div>
         <div className='center'><Link to="/pictures">Pictures</Link></div>
-        <div className='center'><Link to="/nutrition-calculator">Nutrition Calculator</Link></div>
+        <div className='center'><Link to="/nutritional-calculator">Nutritional Calculator</Link></div>
       </div>
 
       <div className='content'>
@@ -39,7 +39,7 @@ const BasicExample = () => (
         <Route path="/projects" component={Projects}/>
         <Route path="/recipes" component={Recipes}/>
         <Route path="/pictures" component={Pictures}/>
-        <Route path="/nutrition-calculator" component={NutritionCalculator}/>
+        <Route path="/nutritional-calculator" component={NutritionalCalculator}/>
       </div>
 
       <div className='social'>

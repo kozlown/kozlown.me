@@ -59,7 +59,12 @@ class NutritionTable extends React.Component {
             <tr style={{
               textAlign: 'center'
             }}>
-              <th colSpan={14}><div style={{margin: 30}}>No aliment added 🍌</div></th>
+              <th colSpan={14}>
+                <div style={{margin: 30}}>
+                  No aliment added
+                  <span role='img' style={{marginLeft: 5}} aria-label='banana'>🍌</span>
+                </div>
+              </th>
             </tr>
           }
         </tbody>

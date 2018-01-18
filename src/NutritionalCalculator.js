@@ -3,9 +3,9 @@ import Button from 'material-ui/Button'
 import SearchIcon from 'material-ui-icons/Search'
 import _ from 'lodash'
 
-import './NutritionCalculator.css'
-import NutritionTable from './NutritionCalculator/NutritionTable'
-import Search from './NutritionCalculator/Search'
+import './NutritionalCalculator.css'
+import NutritionTable from './NutritionalCalculator/NutritionTable'
+import Search from './NutritionalCalculator/Search'
 import getNutrients from './models/Nutrients'
 
 class NutritionCalculator extends React.Component {
