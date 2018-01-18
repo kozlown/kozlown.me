@@ -52,7 +52,16 @@ class NutritionTable extends React.Component {
         </thead>
         <tbody>
           {food}
-          {food.length > 0 ? <Total food={this.props.food}/> : ''}
+          {food.length > 0
+            ?
+            <Total onDeleteAll={this.props.onDeleteAll} food={this.props.food}/>
+            :
+            <tr style={{
+              textAlign: 'center'
+            }}>
+              <th colSpan={14}><div style={{margin: 30}}>No aliment added 🍌</div></th>
+            </tr>
+          }
         </tbody>
       </table>
     )
