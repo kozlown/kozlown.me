@@ -3,6 +3,7 @@ import React from 'react'
 import './NutritionTable.css'
 import Aliment from './Aliment'
 import Total from './Total'
+import { lightLight } from '../colors/base'
 
 class NutritionTable extends React.Component {
   handleQuantityChange(id) {
@@ -21,55 +22,95 @@ class NutritionTable extends React.Component {
         key={id}
         onDelete={this.handleDelete(id)}
         onQuantityChange={this.handleQuantityChange(id)} data={aliment}
+        style={{...id%2 === 1 && lightLight }}
       />
     )
 
+    const carbohydratesColor = ''
+    const lipidColor = ''
+    const proteinColor = ''
+
     return (
-      <table border={1} className='NutritionTable'>
-        <thead>
-          <tr>
-            <th colSpan={2} rowSpan={3}>Actions</th>
-            <th rowSpan={3}>Aliment</th>
-            <th rowSpan={3}>Quantity</th>
-            <th colSpan={2}>Carbohydrate</th>
-            <th colSpan={5}>Lipid</th>
-            <th rowSpan={3}>Protein</th>
-            <th rowSpan={3}>Salt</th>
-            <th rowSpan={3}>Energy</th>
-          </tr>
-          <tr>
-            <th rowSpan={2}>Sugar</th>
-            <th rowSpan={2}>Total</th>
-            <th rowSpan={2}>SFA</th>
-            <th>MFA</th>
-            <th colSpan={2}>PFA</th>
-            <th rowSpan={2}>Total</th>
-          </tr>
-          <tr>
-            <th>o-9</th>
-            <th>o-6</th>
-            <th>o-3</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className='NutritionTable'>
+        <div className='header strong'>
+          <div style={{gridRow: '1 / 4', gridColumn: '1 / 3'}} className='grid-part align-center'>
+            <div className='centered'>
+              Actions
+            </div>
+          </div>
+          <div style={{gridRow: '1 / 4', gridColumn: '3 / 5'}} className='grid-part align-center'>
+            <div className='centered'>
+              Aliment
+            </div>
+          </div>
+          <div style={{gridRow: '1 / 4', gridColumn: '5 / 6'}} className='grid-part align-center'>
+            <div className='centered'>
+              Quantity
+            </div>
+          </div>
+          <div style={{gridRow: '1 / 2', gridColumn: '6 / 8', backgroundColor: carbohydratesColor}} className='grid-part align-center'>Carbohydrate</div>
+          <div style={{gridRow: '1 / 2', gridColumn: '8 / 13', backgroundColor: lipidColor}} className='grid-part align-center'>Lipid</div>
+          <div style={{gridRow: '1 / 4', gridColumn: '13 / 14', backgroundColor: proteinColor}} className='grid-part align-center'>
+            <div className='centered'>
+              Protein
+            </div>
+          </div>
+          <div style={{gridRow: '1 / 4', gridColumn: '14 / 15'}} className='grid-part align-center'>
+            <div className='centered'>
+              Salt
+            </div>
+          </div>
+          <div style={{gridRow: '1 / 4', gridColumn: '15 / 16'}} className='grid-part align-center'>
+            <div className='centered'>
+              Energy
+            </div>
+          </div>
+
+          <div style={{gridRow: '2 / 4', gridColumn: '6 / 7', backgroundColor: carbohydratesColor}} className='grid-part align-center'>
+            <div className='centered'>
+              Sugar
+            </div>
+          </div>
+          <div style={{gridRow: '2 / 4', gridColumn: '7 / 8', backgroundColor: carbohydratesColor}} className='grid-part align-center'>
+            <div className='centered'>
+              Total
+            </div>
+          </div>
+          <div style={{gridRow: '2 / 4', gridColumn: '8 / 9', backgroundColor: lipidColor}} className='grid-part align-center'>
+            <div className='centered'>
+              SFA
+            </div>
+          </div>
+          <div style={{gridRow: '2 / 3', gridColumn: '9 / 10', backgroundColor: lipidColor}} className='grid-part align-center'>MFA</div>
+          <div style={{gridRow: '2 / 3', gridColumn: '10 / 12', backgroundColor: lipidColor}} className='grid-part align-center'>
+            PFA
+          </div>
+          <div style={{gridRow: '2 / 4', gridColumn: '12 / 13', backgroundColor: lipidColor}} className='grid-part align-center'>
+            <div className='centered'>
+              Total
+            </div>
+          </div>
+          <div style={{gridRow: '3 / 4', gridColumn: '9 / 10', backgroundColor: lipidColor}} className='grid-part align-center'>o-8</div>
+          <div style={{gridRow: '3 / 4', gridColumn: '10 / 11', backgroundColor: lipidColor}} className='grid-part align-center'>o-5</div>
+          <div style={{gridRow: '3 / 4', gridColumn: '11 / 12', backgroundColor: lipidColor}} className='grid-part align-center'>o-2</div>
+        </div>
+        <div className='food'>
           {food}
-          {food.length > 0
-            ?
-            <Total onDeleteAll={this.props.onDeleteAll} food={this.props.food}/>
-            :
-            <tr style={{
-              textAlign: 'center'
-            }}>
-              <th colSpan={14}>
-                <div style={{margin: 30}}>
-                  No aliment added
-                  <span role='img' style={{marginLeft: 5}} aria-label='banana'>🍌</span>
-                </div>
-              </th>
-            </tr>
+        </div>
+        <div className='footer strong'>
+          {
+            food.length > 0
+              ?
+              <Total onDeleteAll={this.props.onDeleteAll} food={this.props.food}/>
+              :
+              <div style={{margin: 30, gridRow: '4 / 6', gridColumn: '1 / 14'}}>
+                No aliment added
+                <span role='img' style={{marginLeft: 5}} aria-label='banana'>🍌</span>
+              </div>
           }
-        </tbody>
-      </table>
+        </div>
+      </div>
+
     )
   }
 }

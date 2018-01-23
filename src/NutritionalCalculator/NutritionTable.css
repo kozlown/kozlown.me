@@ -1,7 +1,50 @@
-.NutritionTable tbody th, .NutritionTable tbody tr, .NutritionTable thead tr, .NutritionTable thead th {
-  font-weight: 400;
+.NutritionTable {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 90%;
+  left: 5%;
 }
 
-.NutritionTable thead tr, .NutritionTable thead th {
-  font-size: 22px;
+.NutritionTable .header {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-auto-rows: auto;
+  width: 100%;
+  height: 110px;
+  position: relative;
+}
+
+.NutritionTable .food {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 210px);
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(auto-fill, 100px);
+  background-color: #98ee99;
+}
+
+.NutritionTable .food input {
+  width: 50%;
+}
+
+.NutritionTable .food div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NutritionTable .footer {
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,11 @@
+.Total {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-auto-columns: auto;
+}
+
+.Total div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

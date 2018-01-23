@@ -5,6 +5,7 @@ import Button from 'material-ui/Button'
 import DeleteIcon from 'material-ui-icons/Delete'
 
 import './Total.css'
+import { strongStrong } from '../colors/base'
 
 class Total extends React.Component {
   handleDeleteAll () {
@@ -30,30 +31,31 @@ class Total extends React.Component {
       fontFamily: 'Roboto',
       fontSize: 15,
       textTransform: 'uppercase',
-      margin: 20
+      margin: 20,
+      ...strongStrong
     }
 
     return (
-      <tr className='Total' style={{backgroundColor: '#699C98'}}>
-        <th colSpan={2}>
-          <Button raised color="accent" onClick={this.handleDeleteAll.bind(this)} aria-label="delete" style={deleteAllStyle}>
+      <div className='Total'>
+        <div style={{gridColumn: '1 / 3'}}>
+          <Button raised onClick={this.handleDeleteAll.bind(this)} aria-label="delete" style={deleteAllStyle}>
             Delete all
             <DeleteIcon />
           </Button>
-        </th>
-        <th>TOTAL</th>
-        <th>{total.quantity} g</th>
-        <th>{total.carbohydrate.sugar} g</th>
-        <th>{total.carbohydrate.total} g</th>
-        <th>{total.lipid.SFA} g</th>
-        <th>{total.lipid.o9} g</th>
-        <th>{total.lipid.o6} g</th>
-        <th>{total.lipid.o3} g</th>
-        <th>{total.lipid.total} g</th>
-        <th>{total.protein} g</th>
-        <th>{total.salt} g</th>
-        <th>{total.energy} kcal</th>
-      </tr>
+        </div>
+        <div style={{gridColumn: '3 / 5'}}>TOTAL</div>
+        <div>{total.quantity} g</div>
+        <div>{total.carbohydrate.sugar} g</div>
+        <div>{total.carbohydrate.total} g</div>
+        <div>{total.lipid.SFA} g</div>
+        <div>{total.lipid.o9} g</div>
+        <div>{total.lipid.o6} g</div>
+        <div>{total.lipid.o3} g</div>
+        <div>{total.lipid.total} g</div>
+        <div>{total.protein} g</div>
+        <div>{total.salt} g</div>
+        <div>{total.energy} kcal</div>
+      </div>
     )
   }
 }

@@ -5,10 +5,11 @@
 }
 
 .App .content {
-  position: relative;
-  padding: 50px;
-  width: 100%;
-  height: calc(100vh - 300px);
+  position: fixed;
+  top: 100px;
+  padding: 0 50px 0 50px;
+  width: calc(100% - 100px);
+  height: calc(100vh - 250px);
   overflow-y: auto;
 }
 
@@ -17,11 +18,21 @@
 }
 
 .nav-bar {
-  width: 80%;
-  margin-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 80vw;
+  left: 70px;
+  height: 100px;
   font-size: 25px;
   text-decoration: underline;
-  padding: 50px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.nav-bar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .red {
@@ -40,10 +51,11 @@ u.dotted {
   position: absolute;
   top: 20px;
   left: 20px;
+  margin: 0;
 }
 
 .social {
-  position: absolute;
+  position: fixed;
   width: 100%;
   text-align: center;
   bottom: 50px;

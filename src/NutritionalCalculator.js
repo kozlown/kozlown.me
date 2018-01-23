@@ -7,6 +7,7 @@ import './NutritionalCalculator.css'
 import NutritionTable from './NutritionalCalculator/NutritionTable'
 import Search from './NutritionalCalculator/Search'
 import getNutrients from './models/Nutrients'
+import { strongStrong } from './colors/base'
 
 class NutritionCalculator extends React.Component {
   constructor (props) {
@@ -67,7 +68,7 @@ class NutritionCalculator extends React.Component {
   render () {
     return (
       <div className='NutritionCalculator'>
-        <Button onClick={this.handleAddClick.bind(this)} fab color="primary" aria-label="search" className='searchButton'>
+        <Button onClick={this.handleAddClick.bind(this)} fab aria-label="search" style={strongStrong} className='searchButton'>
           <SearchIcon />
         </Button>
         <NutritionTable

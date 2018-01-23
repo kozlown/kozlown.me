@@ -24,7 +24,7 @@ const BasicExample = () => (
         <img src="./assets/images/nigelk-icon.svg" alt=""/>
       </h1>
 
-      <div className='nav-bar autogrid'>
+      <div className='nav-bar'>
         <div className='center'><Link to="/">About</Link></div>
         <div className='center'><Link to="/whatshere">What's here ?</Link></div>
         <div className='center'><Link to="/projects">Projects</Link></div>
