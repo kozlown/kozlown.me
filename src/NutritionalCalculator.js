@@ -2,7 +2,9 @@ import React from 'react'
 import Button from 'material-ui/Button'
 import SearchIcon from 'material-ui-icons/Search'
 import ExportIcon from 'material-ui-icons/FileDownload'
+import ImportIcon from 'material-ui-icons/FileUpload'
 import Download from 'react-download-link'
+import FileInput from 'react-file-reader'
 
 import _ from 'lodash'
 
@@ -68,6 +70,21 @@ class NutritionCalculator extends React.Component {
     })
   }
 
+  handleImportFile (files) {
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      try {
+        const food = JSON.parse(reader.result)
+        this.setState({
+          food
+        })
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    reader.readAsText(files[0])
+  }
+
   render () {
     return (
       <div className='NutritionCalculator'>
@@ -79,6 +96,11 @@ class NutritionCalculator extends React.Component {
             <ExportIcon/>
           </Button>
         </Download>
+        <FileInput fileTypes={[".json"]} base64={false} multipleFiles={false} handleFiles={this.handleImportFile.bind(this)}>
+          <Button fab aria-label="export" style={strongStrong} className='importButton'>
+            <ImportIcon/>
+          </Button>
+        </FileInput>
         <NutritionTable
           food={this.state.food}
           onDelete={this.handleDelete.bind(this)}
