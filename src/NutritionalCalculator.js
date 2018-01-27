@@ -1,6 +1,9 @@
 import React from 'react'
 import Button from 'material-ui/Button'
 import SearchIcon from 'material-ui-icons/Search'
+import ExportIcon from 'material-ui-icons/FileDownload'
+import Download from 'react-download-link'
+
 import _ from 'lodash'
 
 import './NutritionalCalculator.css'
@@ -69,8 +72,13 @@ class NutritionCalculator extends React.Component {
     return (
       <div className='NutritionCalculator'>
         <Button onClick={this.handleAddClick.bind(this)} fab aria-label="search" style={strongStrong} className='searchButton'>
-          <SearchIcon />
+          <SearchIcon/>
         </Button>
+        <Download filename={'nutrients.json'} exportFile={() => JSON.stringify(this.state.food)}>
+          <Button fab aria-label="export" style={strongStrong} className='exportButton'>
+            <ExportIcon/>
+          </Button>
+        </Download>
         <NutritionTable
           food={this.state.food}
           onDelete={this.handleDelete.bind(this)}
