@@ -19,7 +19,7 @@
   position: relative;
   overflow-y: auto;
   width: 100%;
-  height: calc(100% - 210px);
+  height: calc(100% - 190px);
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(auto-fill, 100px);
@@ -38,7 +38,7 @@
 
 .NutritionTable .footer {
   position: absolute;
-  height: 100px;
+  height: 80px;
   bottom: 0;
   width: 100%;
 }
