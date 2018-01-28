@@ -91,7 +91,7 @@ class NutritionCalculator extends React.Component {
         <Button onClick={this.handleAddClick.bind(this)} fab aria-label="search" style={strongStrong} className='searchButton menuButton'>
           <SearchIcon/>
         </Button>
-        <Download filename={'nutrients.json'} exportFile={() => JSON.stringify(this.state.food)}>
+        <Download style={{width: 0, height: 0}} filename={'nutrients.json'} exportFile={() => JSON.stringify(this.state.food)}>
           <Button fab aria-label="export" style={strongStrong} className='exportButton menuButton'>
             <ExportIcon/>
           </Button>
