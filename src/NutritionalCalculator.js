@@ -24,6 +24,24 @@ class NutritionCalculator extends React.Component {
     }
   }
 
+  componentWillMount () {
+    try {
+      const food = JSON.parse(localStorage.getItem('food'))
+
+      if (food) {
+        this.setState({
+          food
+        })
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    localStorage.setItem('food', JSON.stringify(nextState.food))
+  }
+
   handleAddClick () {
     this.setState({
       search: true
