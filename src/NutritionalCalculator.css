@@ -1,8 +1,18 @@
-.NutritionCalculator .searchButton {
+.NutritionCalculator .menuButton {
   margin: 10px;
-  float: right;
   position: fixed;
   bottom: 110px;
-  right: calc(50% - 28px);
   z-index: 1;
+}
+
+.NutritionCalculator .searchButton {
+  right: calc(50% + 38px);
+}
+
+.NutritionCalculator .importButton {
+  right: calc(50% - 28px);
+}
+
+.NutritionCalculator .exportButton {
+  right: calc(50% - 93px);
 }

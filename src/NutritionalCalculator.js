@@ -88,16 +88,16 @@ class NutritionCalculator extends React.Component {
   render () {
     return (
       <div className='NutritionCalculator'>
-        <Button onClick={this.handleAddClick.bind(this)} fab aria-label="search" style={strongStrong} className='searchButton'>
+        <Button onClick={this.handleAddClick.bind(this)} fab aria-label="search" style={strongStrong} className='searchButton menuButton'>
           <SearchIcon/>
         </Button>
         <Download filename={'nutrients.json'} exportFile={() => JSON.stringify(this.state.food)}>
-          <Button fab aria-label="export" style={strongStrong} className='exportButton'>
+          <Button fab aria-label="export" style={strongStrong} className='exportButton menuButton'>
             <ExportIcon/>
           </Button>
         </Download>
         <FileInput fileTypes={[".json"]} base64={false} multipleFiles={false} handleFiles={this.handleImportFile.bind(this)}>
-          <Button fab aria-label="export" style={strongStrong} className='importButton'>
+          <Button fab aria-label="export" style={strongStrong} className='importButton menuButton'>
             <ImportIcon/>
           </Button>
         </FileInput>
