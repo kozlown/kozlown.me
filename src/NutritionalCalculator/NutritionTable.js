@@ -90,9 +90,9 @@ class NutritionTable extends React.Component {
               Total
             </div>
           </div>
-          <div style={{gridRow: '3 / 4', gridColumn: '9 / 10', backgroundColor: lipidColor}} className='grid-part align-center'>o-8</div>
-          <div style={{gridRow: '3 / 4', gridColumn: '10 / 11', backgroundColor: lipidColor}} className='grid-part align-center'>o-5</div>
-          <div style={{gridRow: '3 / 4', gridColumn: '11 / 12', backgroundColor: lipidColor}} className='grid-part align-center'>o-2</div>
+          <div style={{gridRow: '3 / 4', gridColumn: '9 / 10', backgroundColor: lipidColor}} className='grid-part align-center'>o-9</div>
+          <div style={{gridRow: '3 / 4', gridColumn: '10 / 11', backgroundColor: lipidColor}} className='grid-part align-center'>o-6</div>
+          <div style={{gridRow: '3 / 4', gridColumn: '11 / 12', backgroundColor: lipidColor}} className='grid-part align-center'>o-3</div>
         </div>
         <div className='food'>
           {food}
